@@ -1,5 +1,3 @@
-Ссылка на репозиторий
-https://github.com/username/zakrivayuschiy-teg-f
+https://github.com/Andrey-Bukreev/zakrivayuschiy-teg-f
 
-Ссылка на опубликованный сайт
 https://andrey-bukreev.github.io/zakrivayuschiy-teg-f/
