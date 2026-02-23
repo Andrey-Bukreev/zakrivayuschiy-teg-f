@@ -53,11 +53,11 @@ ol {
 }
 
 button {
-  background: none; 
-  border: none;        
-  padding: 0;          
-  margin: 0;           
-  font: inherit;       
-  cursor: pointer;     
-  outline: inherit;    
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
