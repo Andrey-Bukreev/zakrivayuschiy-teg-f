@@ -75,6 +75,7 @@
   padding: 4px 10px;
   font-weight: 715;
   border-bottom: var(--border);
+  font-variation-settings: "wght" var(--font-weight-header);
 
 }
 
