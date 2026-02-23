@@ -11,6 +11,275 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-default);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image:
+    repeating-linear-gradient(to right, var(--bg-gradient)),
+    repeating-linear-gradient(to bottom, var(--bg-gradient)),
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  background-size: cover;
+  gap: 95px;
+  padding: 100px 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: #fff;
+  padding: clamp(122px, 118.7273px + 0.9091vw, 130px) 16px;
+  border: var(--border);
+}
+
+.block {
+  width: var(--block);
+}
+
+.logo {
+  font-family: var(--font-accent);
+  font-size: clamp(49px, 43.3662px + 1.5023vw, 65px);
+  padding-bottom: 20px;
+}
+
+.logo-discriptor {
+  font-family: var(--font-accent);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+/*Карточки*/
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: var(--border);
+}
+
+.card-header {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 4px 10px;
+  font-weight: 715;
+  border-bottom: var(--border);
+
+}
+
+.image-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.card-image {
+  border-top: var(--border);
+  position: relative;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+/*Image filters*/
+
+.normal {
+  filter: brightness(130%);
+}
+
+.saturation {
+  filter: saturate(15%) brightness(120%);
+}
+
+.contrast {
+  filter: contrast(80%) saturate(340%);
+}
+
+.hue {
+  filter: hue-rotate(0.1turn);
+}
+
+.invert {
+  filter: invert(80%);
+}
+
+.sepia {
+  filter: sepia(0.9);
+}
+
+.blur {
+  filter: blur(15px);
+}
+
+.multiply {
+  filter: hue-rotate(0.2turn) blur(4px) sepia(0.4);
+}
+
+/*Image filters END*/
+
+.watermark {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  -webkit-text-stroke: 1px #FFF;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+  position: absolute;
+  opacity: 50%;
+  top: 25px;
+  right: 25px;
+}
+
+@supports((text-stroke: 1px #FFF) or (-webkit-text-stroke: 1px #FFF)) {
+  .watermark {
+    -webkit-text-stroke: 1px #FFF;
+    text-shadow: none;
+    -webkit-text-stroke: 1px #FFF;
+  }
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+  border-top: var(--border);
+}
+
+.card-footer p {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 410;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  gap: 6px
+}
+
+.button {
+  border: var(--border);
+  background-color: #FFF;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 90%;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+  mix-blend-mode: difference;
+}
+
+/* Псевдоэлемент*/
+.button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translate(-100%);
+  transition: 0.5s ease-in-out;
+  background-color: white;
+  mix-blend-mode: difference;
+}
+
+/* По ховеру */
+.button:hover::before {
+  transform: translate(0);
+}
+
+.card__like-button {
+  min-width: 130px;
+  border: var(--border);
+  justify-content: center;
+  height: 38px;
+}
+
+.card__like-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000;
+  transition: 0.3s ease;
+}
+
+.button-save {
+  padding: 17px 20px;
+}
+
+.dialog {
+  min-width: 293px;
+}
+
+.dialog-container {
+  max-width: 310px;
+  font-family: var(--font-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.dialog-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-diablog {
+  text-transform: uppercase;
+  line-height: 150%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.button-dialog {
+  min-width: 100%;
+  height: 38px;
+}
+
+@media (width <=375px) {
+  .page {
+    width: 100%;
+    min-width: 375px;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .dialog {
+    padding: 20px 40px;
+  }
+
+  .button-save {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

@@ -1,1 +1,10 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+--bg-gradient: #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px;
+--font-default:'Inter', sans-serif;
+--font-accent: 'Press Start 2P';
+--block: clamp(375px, 100%, 700px);
+--border: 2px solid #000;
+--contour: #000000;
+--contour-accent: #FF0000;
+}
