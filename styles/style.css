@@ -128,6 +128,13 @@
 
 /*Image filters END*/
 
+@supports((text-stroke: 1px #FFF) or (-webkit-text-stroke: 1px #FFF)) {
+  .watermark {
+    -webkit-text-stroke: 1px #FFF;
+    text-shadow: none;
+  }
+}
+
 .watermark {
   font-family: var(--font-accent);
   font-size: 14px;
@@ -137,13 +144,6 @@
   opacity: 50%;
   top: 25px;
   right: 25px;
-}
-
-@supports((text-stroke: 1px #FFF) or (-webkit-text-stroke: 1px #FFF)) {
-  .watermark {
-    -webkit-text-stroke: 1px #FFF;
-    text-shadow: none;
-  }
 }
 
 .card-footer {
@@ -164,7 +164,26 @@
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  gap: 6px
+  gap: 7px
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid transparent;
+
+
+}
+
+.card__icon-button:focus {
+  border: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid #000;
+  transition: border 0.3s ease;
 }
 
 .button {
@@ -175,6 +194,7 @@
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .button__text {
@@ -212,30 +232,37 @@
   border: var(--border);
   justify-content: center;
   height: 38px;
+
 }
 
 .card__like-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0px #000;
-  transition: 0.3s ease;
 }
 
 .button-save {
-  padding: 17px 20px;
+  display: flex;
+  padding: 14px 18px;
+  gap: 8px;
+}
+
+.button-save:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000;
 }
 
 .dialog {
-  min-width: 293px;
+  padding: 0px;
 }
 
 .dialog-container {
-  max-width: 310px;
+  max-width: 353px;
   font-family: var(--font-accent);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .dialog-wrapper {
@@ -253,12 +280,17 @@
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .button-dialog {
-  min-width: 100%;
+  min-width: 293px;
   height: 38px;
+}
+
+.button-dialog:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000;
 }
 
 @media (width <=375px) {
@@ -274,6 +306,15 @@ dialog::backdrop {
   .button-save {
     display: flex;
     flex-direction: column;
+  }
+
+  .dialog-container {
+    padding: 30px 40px;
+  }
+
+  .button-save>svg {
+    width: 28px;
+    height: 28px;
   }
 
 }
