@@ -312,6 +312,10 @@ dialog::backdrop {
     padding: 30px 40px;
   }
 
+  .button-dialog {
+    min-width: 261px;
+  }
+
   .button-save>svg {
     width: 28px;
     height: 28px;
