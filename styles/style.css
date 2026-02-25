@@ -27,6 +27,12 @@
   font-variation-settings: "wght" var(--font-weight-text);
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -138,7 +144,6 @@
 .watermark {
   font-family: var(--font-accent);
   font-size: 14px;
-  -webkit-text-stroke: 1px #FFF;
   text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
   position: absolute;
   opacity: 50%;
@@ -154,7 +159,7 @@
   border-top: var(--border);
 }
 
-.card-footer p {
+.card-footer {
   font-size: 18px;
   line-height: 21px;
   font-weight: 410;
@@ -173,6 +178,7 @@
   width: 38px;
   height: 38px;
   border: 2px solid transparent;
+  transition: border 0.3s ease;
 
 
 }
@@ -183,7 +189,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid #000;
-  transition: border 0.3s ease;
 }
 
 .button {
@@ -232,18 +237,19 @@
   border: var(--border);
   justify-content: center;
   height: 38px;
-
 }
 
 .card__like-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0px #000;
+
 }
 
 .button-save {
   display: flex;
   padding: 14px 18px;
   gap: 8px;
+  align-self: center;
 }
 
 .button-save:focus-visible {
