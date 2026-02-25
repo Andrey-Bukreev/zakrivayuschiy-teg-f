@@ -156,13 +156,10 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-  border-top: var(--border);
-}
-
-.card-footer {
   font-size: 18px;
   line-height: 21px;
   font-weight: 410;
+  border-top: var(--border);
 }
 
 .button-group {
